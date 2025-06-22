@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if [ $# -ne 2 ]; then
   echo "Error: Two arguments required. Usage: finder.sh <directory> <search string>"
@@ -13,12 +13,12 @@ if [ ! -d "$filesdir" ]; then
   exit 1
 fi
 
-make clean
-make
-if [ $? -ne 0 ]; then
-  echo "Error: Build failed"
-  exit 1
-fi
+#make clean
+#make
+#if [ $? -ne 0 ]; then
+#  echo "Error: Build failed"
+#  exit 1
+#fi
 
 file_count=$(find "$filesdir" -type f | wc -l)
 match_count=$(grep -r "$searchstr" "$filesdir" 2>/dev/null | wc -l)
