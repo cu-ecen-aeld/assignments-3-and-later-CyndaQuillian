@@ -12,6 +12,10 @@ ARCH=arm64
 CROSS_COMPILE=aarch64-none-linux-gnu-
 BUSYBOX_VERSION=1_33_1
 
+# Set the FINDER_APP_DIR to the correct path 
+FINDER_APP_DIR=$(realpath $(dirname $0))
+echo "Using finder-app directory at ${FINDER_APP_DIR}"
+
 # Default directory if not passed as argument
 DEFAULT_OUTDIR="/tmp/aeld"
 
@@ -57,10 +61,6 @@ if [ -d "${OUTDIR}/rootfs" ]; then
     sudo rm -rf ${OUTDIR}/rootfs
 fi
 mkdir -p ${OUTDIR}/rootfs
-
-# Set the FINDER_APP_DIR to the correct path
-FINDER_APP_DIR="$realpath "$(dirname "$0")/../finder-app")"
-echo "Using finder-app directory at ${FINDER_APP_DIR}"
 
 # Build the root filesystem
 cd "$OUTDIR"
