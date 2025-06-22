@@ -13,7 +13,7 @@ CROSS_COMPILE=aarch64-none-linux-gnu-
 BUSYBOX_VERSION=1_33_1
 
 # Set the FINDER_APP_DIR to the correct path 
-FINDER_APP_DIR=$(realpath $(dirname $0))
+FINDER_APP_DIR=$(readlink -f "$(dirname "$0")")
 echo "Using finder-app directory at ${FINDER_APP_DIR}"
 
 # Default directory if not passed as argument
