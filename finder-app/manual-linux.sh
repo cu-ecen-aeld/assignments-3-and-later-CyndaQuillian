@@ -59,7 +59,7 @@ fi
 mkdir -p ${OUTDIR}/rootfs
 
 # Set the FINDER_APP_DIR to the correct path
-FINDER_APP_DIR=~/class/finder-app
+FINDER_APP_DIR="$realpath "$(dirname "$0")/../finder-app")"
 echo "Using finder-app directory at ${FINDER_APP_DIR}"
 
 # Build the root filesystem
