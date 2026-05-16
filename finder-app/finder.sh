@@ -28,7 +28,7 @@ result="The number of files are $file_count and the number of matching lines are
 output_file="/tmp/assignment2/result.txt"
 mkdir -p "$(dirname "$output_file")"
 
-./writer "$output_file" "$result"
+writer "$output_file" "$result"
 
 if [ $? -ne 0 ]; then
   echo "Error: writer failed"
